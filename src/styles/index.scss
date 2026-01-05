@@ -6,28 +6,24 @@ html {
 }
 
 body {
-  margin: 0;
-}
-
-.con {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
   height: 100vh;
+  margin: 0;
 }
 
 .calendar {
+  display: flex;
   box-sizing: border-box;
   width: $cal-width;
   padding-left: $cal-hor-padding;
   padding-right: $cal-hor-padding;
-  display: flex;
   flex-flow: row wrap;
   gap: $cal-gap;
 }
 
-.cell {
+.calendar__day {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,7 +50,7 @@ body {
 }
 
 @for $num-of-the-day from 1 through 31 {
-  .cell:nth-child(#{$num-of-the-day})::before {
+  .calendar__day:nth-child(#{$num-of-the-day})::before {
     content: '#{$num-of-the-day}';
   }
 }
